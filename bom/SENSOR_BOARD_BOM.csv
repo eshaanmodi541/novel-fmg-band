@@ -1,0 +1,7 @@
+﻿"No.","Quantity","Comment","Designator","Footprint","Value","Manufacturer Part","Manufacturer","Supplier Part","Supplier"
+"1","3","100nF","C1,C2,C3","C0603","100nF","CL10B104KB8NNNC","SAMSUNG(三星)","C1591","LCSC"
+"2","1","10uF","C4","C1206","10uF","CL31B106KBHNNNE","SAMSUNG(三星)","C89632","LCSC"
+"3","1","20kΩ","R1","R0805","20kΩ","FRC0805F2002TS","FOJAN(富捷)","C2907240","LCSC"
+"4","1","110kΩ","R2","R0805","110kΩ","0805W8F1103T5E","UNI-ROYAL(厚声)","C17422","LCSC"
+"5","1","10kΩ","R3","R0603","10kΩ","RC0603FR-0710KL","YAGEO(国巨)","C98220","LCSC"
+"6","1","TS951ILT","U1","SOT-23-5_L3.0-W1.7-P0.95-LS2.8-BR","","TS951ILT","ST(意法半导体)","C108177","LCSC"
