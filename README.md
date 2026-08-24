@@ -1,6 +1,7 @@
 # Novel FMG Band
 
-![PROJECT CAD](https://file%2B.vscode-resource.vscode-cdn.net/Users/eshaanmodi/Desktop/GitHub/novel-fmg-band/assets/CAD_ASSEMBLY_1.png?version%3D1787603640367)
+![PROJECT CAD](./assets/CAD_ASSEMBLY_1.png)
+![PROJECT CAD](./assets/PCB_FMG_3D_3.png)
 
 This is a novel Force Myography band that is able to 'predict' your hand movements, even if you are an amputee!
 
@@ -80,9 +81,9 @@ If you want to read more about what I hope to accomplish with the research, I ha
 
 ## PCB
 
-![alt text]([https://file%2B.vscode-resource.vscode-cdn.net/Users/eshaanmodi/Desktop/GitHub/novel-fmg-band/assets/PCB_FMG_TOP_2.png?version%3D1787603644488](https://file%2B.vscode-resource.vscode-cdn.net/Users/eshaanmodi/Desktop/GitHub/novel-fmg-band/assets/PCB_FMG_TOP_2.png?version%3D1787603640367))
+![alt text](./assets/PCB_FMG_TOP_2.png)
 
-![alt text]([https://file%2B.vscode-resource.vscode-cdn.net/Users/eshaanmodi/Desktop/GitHub/novel-fmg-band/assets/PCB_FMG_SCHEMATIC.png?version%3D1787603640488](https://file%2B.vscode-resource.vscode-cdn.net/Users/eshaanmodi/Desktop/GitHub/novel-fmg-band/assets/PCB_FMG_SCHEMATIC.png?version%3D1787603640367))
+![alt text](./assets/PCB_FMG_SCHEMATIC.png)
 
 My PCB combines the major components while staying compact and avoiding analog-digital crosstalk.
 
