@@ -1,132 +1,74 @@
 # Novel FMG Band
 
-![PROJECT CAD](./assets/CAD_ASSEMBLY_1.png)
-![PROJECT CAD](./assets/PCB_FMG_3D_3.png)
+![CAD Assembly](./assets/CAD_BW_3.png)
 
-This is a novel Force Myography band that is able to 'predict' your hand movements, even if you are an amputee!
+A wearable Force Myography band that uses pressure measurements around the forearm to predict your hand movements! This technology can help in prosthetics, robotics control, and other HMI applications.
 
-It works by analyzing the pressure around your forearm using force-sensitive resistors and training a model based on that data.
+The core research investigates how sensor compression affects FMG accuracy and repeatability. This is almost never studied in current literature.
 
-It is a revolutionary concept for cheap, accurate prosthetic control that has only recently entered the literature.
+## Research
 
-My project not only builds and tests one, but also has a novel feature that I am going to study and perform research on.
+### Research questions
 
-In the future, I would love to build a full prosthetic hand that I can control using this band.
+* How does sensor compression affect FMG gesture recognition accuracy?
+* How does regulating compression between don/doff cycles affect the sensor's drift?
 
-**-----------**
+### Hypothesis
 
-## Features
+A moderate level of compression will produce the highest accuracy by providing consistent sensor contact without saturating the FMG signal.
 
-PCB:
+The `/research` folder contains a one-page PDF explaining the research concept in more detail :)
 
-- OLED display!
+## Hardware
 
-- Teensy 4.0: an absolute power beast to control prosthetics super fast (600MHz)
+### PCB
 
-- MicroSD card slot for saving data
+![PCB](./assets/PCB_FMG_TOP_2.png)
+![Schematic](./assets/PCB_FMG_SCHEMATIC.png)
 
-- BMI270 IMU to correct for the limb position effect.
+* **Teensy 4.0** — extremely fast microcontroller for real-time processing
+* **8× Alpha FSRs** — pressure sensing around the forearm
+* **BMI270 IMU** — tracks limb position
+* **128×32 OLED** — displays system information
+* **MicroSD card** — stores sensor data
+* **TPS63000 buck-boost converter**
+* **RC low-pass filters** on FSR inputs
+* **Inverting op-amp stages** for FSR signal conditioning
+* **3.7 V 2000 mAh LiPo** power
+* **Breakout headers** for I²C, SPI, UART, GPIO, and power
 
-- 8 Alpha FSRs (from Adafruit; comparable to FSR402) to get pressure points all around your wrist.
+### Mechanical Design
 
-- Breakout headers for debugging (I2C, SPI, UART, GPIO, POWER, etc.)
+![CAD DESIGN](/assets/CAD_2.png)
 
-- Powered using a 3.7V LiPo (2000 mAh)
+The band uses a rigid structure with 8 individually adjustable screw-driven plungers that control the compression of each FSR individually. This allows me to study how the pressure of the band effects the accuracy.
 
-- Inverting Op-Amp to linearize FSR output.
+Additionally when the FSRs are retracted, it is wide enough to easily slip on the band.
 
-- Innovative dual PCB design
+## Firmware
 
-CAD
+The band:
 
-- 8 individually controlled screw-based plungers that drive each sensor into the skin
+1. Collects FSR and IMU measurements extremely fast (600 MHz!).
+2. Displays system information on the OLED screen (And what gestures the participants should perform).
+3. Stores data on the MicroSD card (for training the model in the future!).
+4. Uses collected data to train a neural network on my computer.
+5. Loads the trained model onto the Teensy 4.0 for real-time gesture classification.
 
-```
-\- this allows me to measure the effect of sensor compression on the accuracy of FMG bands -- something never done in the literature!
-```
+## Project Status
 
-- A novel rigid design for the band
+This project is currently still in the design phase.
 
-```
-\- moves away from confounding strap designs and keeps measurements rock solid
+CAD files, PCB designs, and the BOM are all in this repository for anyone who was inspired by this design or want to build it.
 
-\- rigid band is held up using an adjustable rig for collecting data
-```
+## Future Work
 
-Firmware:
+* Build a prosthetic hand controlled by the FMG band.
+* Investigate additional issues with FMG.
+* Make prosthetic control more affordable and reliable.
 
-- band collects FSR and IMU data, and pushes that data as well as other important information onto the OLED and SD Card.
+## Acknowledgments
 
-- Once data from a few participants is collected, the model will be trained on my computer and then the weights for the neural network will be transferred back onto the SD card or Teensy flash
-
-- Then the Teensy can use the trained model to predict your gestures in real time.
-
-**-----------**
-
-## More About the Research
-
-### Research Questions:
-
-How does the compression of a Force Myography band affect the accuracy of the system using force-sensitive resistors?
-
-How does regulating the amount of compression between don/doff cycles affect sensor drift over time?
-
-### Research Hypothesis:
-
-My hypothesis is that a moderate amount of compression will result in a peak in the accuracy of the system, as it will balance proper sensor contact without killing the signals.
-
-If you want to read more about what I hope to accomplish with the research, I have left a short PDF covering the core ideas in the /research folder.
-
-**-----------**
-
-## PCB
-
-![alt text](./assets/PCB_FMG_TOP_2.png)
-
-![alt text](./assets/PCB_FMG_SCHEMATIC.png)
-
-My PCB combines the major components while staying compact and avoiding analog-digital crosstalk.
-
-Key components:
-
-- TPS63000 buck-boost converter
-
-- Teensy 4.0 dev board
-
-- Adafruit Alpha FSR
-
-- BMI270
-
-- 128 * 32 OLED screen
-
-- Micro_SD card (SPI)
-
-- RC filters (low-pass) on FSR lines
-
-- Inverting Op-Amp for each FSR
-
-**------------**
-
-## Get started!
-
-This project is not yet completed, but if you would like to take inspiration or even build it, all the CAD models are in /CAD. You can also view the BOM in order to purchase the right amount of everything.
-
-I have split the BOM into basic materials to buy, and in-depth lists for components for both PCBs!
-
-**------------**
-
-## Future Work & Thanks
-
-Short-term future goal:
-
-Build a prosthetic hand to control with my band!
-
-Long-term goal:
-
-Help make prosthetics more affordable and reliable for amputees around the globe
-
-Thanks:
-
-Special thanks to Dr. Young and Dr. Stierotowicz for advising me on this project.
+Special thanks to Dr. Young and Dr. Stierotowicz for advising this project.
 
 Special thanks to Hack Club for funding this and many other projects.
