@@ -39,7 +39,7 @@ The `/research` folder contains a one-page PDF explaining the research concept i
 
 ### Mechanical Design
 
-![CAD DESIGN](/assets/CAD_2.png)
+![CAD DESIGN](./assets/CAD_2.png)
 
 The band uses a rigid structure with 8 individually adjustable screw-driven plungers that control the compression of each FSR individually. This allows me to study how the pressure of the band effects the accuracy.
 
